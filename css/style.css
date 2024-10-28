@@ -1,4 +1,8 @@
 body {
   padding: 0;
   margin: 0;
+}
+
+.completed-true {
+  text-decoration: line-through;
 }/*# sourceMappingURL=style.css.map */

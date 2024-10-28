@@ -31,9 +31,15 @@
        
             <div class="col-8">
                 <h1 id="currentListName"></h1>
-                <div id="currentListTasks"></div>
+                <div id="currentListTasks">
+
+                </div>
+                <div>
+                  <button class="btn btn-nono" onclick="removeAllCompletedTasks()"></button>
+                  <input type="text" id="newTaskName">
+                  <button class="btn btn-primary" onclick="addTask(document.getElementById('newTaskName').value)"></button>
+                </div>
             </div>
-       
           </div>
         </div>
        </div>

@@ -32,7 +32,9 @@ addTask = name => {
   render();
 }
 removeTask = index => {
+  console.log(currentList);
   currentList.tasks.splice(index, 1);
+  console.log(currentList);
   render();
 }
 toggleTaskCompleted = index => {
@@ -46,7 +48,7 @@ removeAllCompletedTasks = () => {
 render = () => {
   let listsHTML = '<ul class="listGroup">';
   for (const [key, value] of Object.entries(lists)) {
-    listsHTML += `<li class="listGroupItem" onclick="selectList(${key})">${value.name}</li>`
+    listsHTML += `<div><button class="btn btn-nono" onclick="removeList(${key})"></button><span class="listGroupItem" onclick="selectList(${key})">${value.name}</span></div>`
   }
 
   document.getElementById('lists').innerHTML = listsHTML + '</ul>';
@@ -55,7 +57,8 @@ render = () => {
   if (Object.keys(currentList).length > 0) {
     let tasksHTML = '<ul class="listGroupFlush">'
     for (let i = 0; i < currentList.tasks.length; i++ ) {
-      tasksHTML += `<li class="listGroupItem completed-${currentList.tasks[i].completed}" id="${generateID()}" onclick="toggleTaskCompleted(${i})">${currentList.tasks[i].text}</li>`
+      tasksHTML += `<button class="btn btn-nono" onclick="removeTask(${i})"></button>`
+      tasksHTML += `<div class="listGroupItem completed-${currentList.tasks[i].completed}" id="${generateID()}" onclick="toggleTaskCompleted(${i})">${currentList.tasks[i].text}</div>`
     }
     document.getElementById('currentListTasks').innerHTML = tasksHTML + '</ul>';
   }

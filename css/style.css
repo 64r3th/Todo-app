@@ -5,4 +5,8 @@ body {
 
 .completed-true {
   text-decoration: line-through;
+}
+
+.btn-nono {
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
